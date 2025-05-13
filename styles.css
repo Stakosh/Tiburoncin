@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cinzel&display=swap');
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Playfair Display', serif;
+  /* Gradiente + estrellas via radial gradients */
+  background:
+    radial-gradient(circle at 20% 80%, rgba(255,255,255,0.05) 2px, transparent 0),
+    radial-gradient(circle at 60% 20%, rgba(255,255,255,0.05) 2px, transparent 0),
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.05) 2px, transparent 0),
+    linear-gradient(135deg, #0c0c0c, #1a0a2e);
+  background-size: 150px 150px, 200px 200px, 180px 180px, auto;
+  color: #d8c2ff;
+  min-height: 100vh;
+  text-align: center;
+  position: relative;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px 0;
+}
+
+/* Capa extra de "estrellitas" puntuales */
+.stars {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background:
+    radial-gradient(rgba(255,255,255,0.8) 1px, transparent 0) 0 0/4px 4px,
+    radial-gradient(rgba(255,255,255,0.8) 1px, transparent 0) 2px 2px/4px 4px;
+  opacity: 0.2;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Murciélagos */
+.bat {
+  position: absolute;
+  width: 30px; height: 30px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23602e9e'%3E%3Cpath d='M12 1c-2.2 0-4 1.8-4 4 0 1.5.8 2.8 2 3.4-4 1.4-7 5.3-7 9.6h2c0-3.5 2.2-6.5 5.3-7.8C9.5 12.3 10.7 14 12 14s2.5-1.7 3.7-3.8C18.8 11.5 21 14.5 21 18h2c0-4.3-3-8.2-7-9.6 1.2-.6 2-1.9 2-3.4 0-2.2-1.8-4-4-4zm0 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+/* Cuervos */
+.raven {
+  position: absolute;
+  width: 40px; height: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23441e6e'%3E%3Cpath d='M22 10c0-1.1-.9-2-2-2h-2.7c-.2-.9-.8-1.7-1.7-2.2l-5.3-2.5-.8-1.3c-.2-.3-.5-.5-.9-.5H6c-.8 0-1.4.6-1.4 1.4v.3c0 .6.4 1.1.9 1.3l2.1.6c-2.2 1.2-3.6 3.5-3.6 6V13c0 1.7.5 3.2 1.4 4.5L1 19v2h5.5c.9.6 2 1 3.3 1h8.1c2.2 0 4.1-1.8 4.1-4v-2.7c0-1-.2-2-.6-2.9.4-.6.6-1.5.6-2.4zm-16 7.3c-1.9 0-3.5-1.6-3.5-3.5 0-1.9 1.6-3.5 3.5-3.5 1.9 0 3.5 1.6 3.5 3.5 0 1.9-1.6 3.5-3.5 3.5z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.container {
+  width: 90%;
+  max-width: 800px;
+  padding: 30px;
+  background-color: rgba(20, 10, 30, 0.8);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+  border: 1px solid #602e9e;
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(5px);
+  margin-bottom: 40px;
+}
+
+.date-time {
+  font-size: 1.2rem;
+  color: #a68bd6;
+  margin-bottom: 15px;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 1px;
+}
+
+.image-container {
+  margin: 20px 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(138, 43, 226, 0.5);
+  border: 1px solid #602e9e;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.quote {
+  font-size: 1.4rem;
+  font-style: italic;
+  color: #d8c2ff;
+  margin: 25px 0;
+  padding: 20px;
+  background-color: rgba(40, 20, 60, 0.6);
+  border-radius: 10px;
+  border-left: 5px solid #9966cc;
+  position: relative;
+}
+
+.quote::before,
+.quote::after {
+  content: '';
+  position: absolute;
+  width: 20px; height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236e41a7'%3E%3Cpath d='M21 10.5h-2l1-2.5h-2.5l-1 2.5h-2.5v5h7v-5z'/%3E%3Cpath d='M10 10.5H8l1-2.5H6.5l-1 2.5H3v5h7v-5z'/%3E%3C/svg%3E");
+  background-size: contain;
+  opacity: 0.5;
+}
+
+.quote::before { top:5px; left:5px; transform: rotate(180deg); }
+.quote::after  { bottom:5px; right:5px; }
+
+.quote-author {
+  font-size: 1rem;
+  color: #9966cc;
+  text-align: right;
+  font-family: 'Cinzel', serif;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #b68bff;
+  margin-bottom: 20px;
+  font-family: 'Cinzel', serif;
+  text-shadow: 0 0 10px #9966cc;
+  letter-spacing: 2px;
+}
+
+.emoji {
+  font-size: 2rem;
+  margin: 15px 0;
+}
+
+.footer {
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: #8a64c9;
+  font-style: italic;
+}
+
+/* Media queries */
+@media (max-width: 480px) {
+  .container { padding: 15px; }
+  .date-time { font-size: 1rem; }
+  .quote { font-size: 1.2rem; }
+  .emoji { font-size: 1.5rem; }
+  .bat, .raven { width: 20px; height: 20px; }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .container { padding: 25px; }
+  .date-time { font-size: 1.1rem; }
+}
