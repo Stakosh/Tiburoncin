@@ -38,18 +38,42 @@
 
   <script>
    const quotes = [
-    { text: "La noche es oscura y alberga horrores, pero la oscuridad también alberga belleza.", author: "Edgar Allan Poe" },
-    { text: "Todos somos un poco raros. Y la vida es un poco extraña. Y cuando encontramos a alguien cuya rareza es compatible con la nuestra, nos unimos a ellos.", author: "Tim Burton" },
-    { text: "Amé a la oscuridad y a la muerte, y por ello estoy aquí, en el valle de la sombra eterna.", author: "H.P. Lovecraft" },
-    { text: "Los cuervos recuerdan las caras de las personas que los trataron mal.", author: "Anónimo" },
-    { text: "La música es como un cuervo para el cementerio de mi mente. Sobrevuela los huecos.", author: "Finch" },
-    { text: "Incluso en la oscuridad más profunda, hay destellos de luz que nos guían.", author: "Anónimo" },
-    { text: "No todos los que vagan están perdidos; no todo lo oscuro carece de belleza.", author: "Inspirado en J.R.R. Tolkien" },
-    { text: "Las almas más hermosas son aquellas que han conocido la derrota, el sufrimiento, la lucha, la pérdida, y han encontrado su camino fuera de las profundidades.", author: "Elisabeth Kübler-Ross" },
-    { text: "Los murciélagos han aprendido que la oscuridad no es algo que temer, sino algo en lo que prosperar.", author: "Anónimo" },
-    { text: "Más oscura es la noche, más brillantes son las estrellas.", author: "Fyodor Dostoevsky" }
+    // Góticas / Vampiros
+    { text: "La noche es eterna para los que beben la oscuridad como sangre.", author: "Anónimo" },
+    { text: "Un vampiro no puede adorar al sol, pero sí agradecer cada atardecer.", author: "Anónimo" },
+    { text: "La sed no se apaga con agua: se sacia con el latido de la noche.", author: "Vlad Tepes" },
+
+    // Atardeceres
+    { text: "Cada atardecer trae la promesa de un nuevo amanecer.", author: "Ralph Waldo Emerson" },
+    { text: "El cielo se tiñe de fuego y alma al caer el sol.", author: "Anónimo" },
+
+    // Horizon Zero Dawn (líneas célebres)
+    { text: "Aloy: “No soy una salvadora. Solo hago lo que quiero, cuando quiero.”", author: "Horizon Zero Dawn" },
+    { text: "Aitra: “El mundo no pertenece a las máquinas… no por mucho tiempo.”", author: "Horizon Zero Dawn" },
+    { text: "“Eres la elegida, Aloy. La que puede cambiarlo todo.”", author: "Horizon Zero Dawn" },
+
+    // Stardew Valley
+    { text: "Hay dos formas de ser feliz en la granja: con el sudor de tu frente o con la semilla del corazón.", author: "Anónimo" },
+    { text: "Cada semilla plantada es un sueño enraizado en la tierra.", author: "Stardew Valley" },
+    { text: "La soledad de la granja es la voz más clara de tu propio corazón.", author: "Anónimo" },
+
+    // Tiburones (datos curiosos)
+    { text: "Los tiburones han existido por más de 400 millones de años, mucho antes que los dinosaurios.", author: "Dato Curioso" },
+    { text: "El tiburón toro puede vivir tanto en agua dulce como salada.", author: "Dato Curioso" },
+    { text: "Cada año mueren más tiburones por la pesca que personas por ataques.", author: "Dato Curioso" },
+
+    // Dinosaurios (datos curiosos)
+    { text: "El Tyrannosaurus rex vivió hace aproximadamente 68 millones de años.", author: "Dato Curioso" },
+    { text: "El velociraptor era más ligero y plumífero de lo que muestran las películas.", author: "Dato Curioso" },
+    { text: "Los primeros dinosaurios aparecieron hace unos 245 millones de años.", author: "Dato Curioso" }
   ];
-    const emojis = ["🖤","🦇","🕸️","🔮","⚰️","🌙","🕯️","🧛‍♀️","🌑","🦉"];
+    const emojis = [
+    "🖤","🦇","🕸️","🔮","⚰️","🌙","🕯️","🧛‍♀️","🌑","🦉", // gótico
+    "🌅","🌄","🌇","☀️","🌠",                               // atardecer/amanecer
+    "🦈","🐋","🐬","🐟","🦀",                               // mar / tiburones
+    "🦖","🦕","🌋","⛰️","🏞️",                             // dinosaurios / paisajes
+    "🏹","🛡️","⚔️","🤖","🌾"                               // Horizon / granja
+  ];
 
     function updateDateTime() {
       const opts = {
