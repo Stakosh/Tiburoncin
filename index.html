@@ -268,36 +268,34 @@
         }
 
         // Función para cargar una imagen basada en el día
-        function loadDailyImage() {
-            // En una implementación real, aquí cargarías una imagen específica del día
-            // de tu carpeta de imágenes
-            const today = new Date();
-            const dayOfYear = getDayOfYear(today);
-            
-            // Este es solo un ejemplo. En la implementación real, cargarías tus propias imágenes
-            const imageElement = document.getElementById('daily-image');
-            
-            // Aquí iría tu código para cargar la imagen diaria desde tu carpeta
-            // Por ejemplo, si tienes un array de imágenes:
-            // const imagenes = ["imagenes/imagen1.jpg", "imagenes/imagen2.jpg", ...];
-            // const imageIndex = dayOfYear % imagenes.length;
-            // imageElement.src = imagenes[imageIndex];
-            
-            // Para la demo usamos un placeholder
-            imageElement.src = "/api/placeholder/600/400";
-            imageElement.alt = "Imagen diaria para alegrarte";
-        }
+        // Función para cargar una imagen aleatoria desde la carpeta "imagenes"
+    function loadDailyImage() {
+        const imageElement = document.getElementById('daily-image');
+        // Lista de imágenes disponibles en tu carpeta "imagenes"
+        const imagenes = [
+            "imagenes/imagen1.jpg",
+            "imagenes/imagen2.jpg",
+            "imagenes/imagen3.jpg",
+            "imagenes/imagen4.jpg",
+            "imagenes/imagen5.jpg",
+            "imagenes/imagen6.jpg",
+            "imagenes/imagen7.jpg",
+            "imagenes/imagen8.jpg"
+        ];
+        // Selecciona un índice aleatorio
+        const randomIndex = Math.floor(Math.random() * imagenes.length);
+        // Asigna la imagen seleccionada
+        imageElement.src = imagenes[randomIndex];
+        imageElement.alt = "Imagen aleatoria para alegrarte";
+    }
 
-        // Inicializar la página
-        document.addEventListener('DOMContentLoaded', function() {
-            updateDateTime();
-            setDailyQuote();
-            setDailyEmoji();
-            loadDailyImage();
-            
-            // Actualizar la hora cada segundo
-            setInterval(updateDateTime, 1000);
-        });
-    </script>
+    document.addEventListener('DOMContentLoaded', function() {
+        updateDateTime();
+        setDailyQuote();
+        setDailyEmoji();
+        loadDailyImage();
+        setInterval(updateDateTime, 1000);
+    });
+</script>
 </body>
 </html>
