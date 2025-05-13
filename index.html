@@ -1,301 +1,260 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hola Tams, Buen día✨</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cinzel&display=swap');
-        
-        body {
-            font-family: 'Playfair Display', serif;
-            background-color: #0c0c0c;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            text-align: center;
-            background: linear-gradient(135deg, #0c0c0c, #1a0a2e);
-            color: #d8c2ff;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        /* Decoración de murciélagos */
-        .bat {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23602e9e'%3E%3Cpath d='M12 1c-2.2 0-4 1.8-4 4 0 1.5.8 2.8 2 3.4-4 1.4-7 5.3-7 9.6h2c0-3.5 2.2-6.5 5.3-7.8C9.5 12.3 10.7 14 12 14s2.5-1.7 3.7-3.8C18.8 11.5 21 14.5 21 18h2c0-4.3-3-8.2-7-9.6 1.2-.6 2-1.9 2-3.4 0-2.2-1.8-4-4-4zm0 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z'/%3E%3C/svg%3E");
-            background-size: contain;
-            background-repeat: no-repeat;
-            opacity: 0.5;
-            z-index: 0;
-        }
-        
-        /* Decoración de cuervos */
-        .raven {
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23441e6e'%3E%3Cpath d='M22 10c0-1.1-.9-2-2-2h-2.7c-.2-.9-.8-1.7-1.7-2.2l-5.3-2.5-.8-1.3c-.2-.3-.5-.5-.9-.5H6c-.8 0-1.4.6-1.4 1.4v.3c0 .6.4 1.1.9 1.3l2.1.6c-2.2 1.2-3.6 3.5-3.6 6V13c0 1.7.5 3.2 1.4 4.5L1 19v2h5.5c.9.6 2 1 3.3 1h8.1c2.2 0 4.1-1.8 4.1-4v-2.7c0-1-.2-2-.6-2.9.4-.6.6-1.5.6-2.4zm-16 7.3c-1.9 0-3.5-1.6-3.5-3.5 0-1.9 1.6-3.5 3.5-3.5 1.9 0 3.5 1.6 3.5 3.5 0 1.9-1.6 3.5-3.5 3.5z'/%3E%3C/svg%3E");
-            background-size: contain;
-            background-repeat: no-repeat;
-            opacity: 0.6;
-            z-index: 0;
-        }
-        
-        .container {
-            max-width: 800px;
-            padding: 30px;
-            background-color: rgba(20, 10, 30, 0.8);
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
-            border: 1px solid #602e9e;
-            position: relative;
-            z-index: 10;
-            backdrop-filter: blur(5px);
-        }
-        
-        .date-time {
-            font-size: 1.2rem;
-            color: #a68bd6;
-            margin-bottom: 15px;
-            font-family: 'Cinzel', serif;
-            letter-spacing: 1px;
-        }
-        
-        .image-container {
-            margin: 20px 0;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.5);
-            border: 1px solid #602e9e;
-        }
-        
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .quote {
-            font-size: 1.4rem;
-            font-style: italic;
-            color: #d8c2ff;
-            margin: 25px 0;
-            padding: 20px;
-            background-color: rgba(40, 20, 60, 0.6);
-            border-radius: 10px;
-            border-left: 5px solid #9966cc;
-            position: relative;
-        }
-        
-        .quote::before, .quote::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236e41a7'%3E%3Cpath d='M21 10.5h-2l1-2.5h-2.5l-1 2.5h-2.5v5h7v-5z'/%3E%3Cpath d='M10 10.5H8l1-2.5H6.5l-1 2.5H3v5h7v-5z'/%3E%3C/svg%3E");
-            background-size: contain;
-            opacity: 0.5;
-        }
-        
-        .quote::before {
-            top: 5px;
-            left: 5px;
-            transform: rotate(180deg);
-        }
-        
-        .quote::after {
-            bottom: 5px;
-            right: 5px;
-        }
-        
-        .quote-author {
-            font-size: 1rem;
-            color: #9966cc;
-            text-align: right;
-            font-family: 'Cinzel', serif;
-        }
-        
-        h1 {
-            color: #b68bff;
-            margin-bottom: 20px;
-            font-family: 'Cinzel', serif;
-            text-shadow: 0 0 10px #9966cc;
-            letter-spacing: 2px;
-        }
-        
-        .emoji {
-            font-size: 2rem;
-            margin: 15px 0;
-        }
-        
-        .footer {
-            margin-top: 30px;
-            font-size: 0.9rem;
-            color: #8a64c9;
-            font-style: italic;
-        }
-    </style>
-</head>
-<body>
-    <!-- Elementos decorativos de murciélagos y cuervos -->
-    <div class="bat" style="top: 10%; left: 5%;"></div>
-    <div class="bat" style="top: 15%; right: 8%;"></div>
-    <div class="bat" style="bottom: 20%; left: 10%;"></div>
-    <div class="bat" style="bottom: 30%; right: 15%;"></div>
-    <div class="raven" style="top: 8%; right: 20%;"></div>
-    <div class="raven" style="bottom: 12%; left: 15%;"></div>
-    
-    <div class="container">
-        <h1>🦇 Hola Tams c: 🦇</h1>
-        
-        <div class="date-time" id="datetime"></div>
-        
-        <div class="image-container">
-            <img id="daily-image" src="/api/placeholder/600/400" alt="Imagen del día">
-        </div>
-        
-        <div class="quote" id="daily-quote">
-            "La noche es oscura y alberga horrores, pero la oscuridad también alberga belleza."
-            <div class="quote-author">- Edgar Allan Poe</div>
-        </div>
-        
-        <div class="emoji">🖤</div>
-        
-        <div class="footer">
-            Conjurado con magia oscura, solo para ti
-        </div>
-    </div>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hola Tams, Buen día✨</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cinzel&display=swap');
 
-    <script>
-        // Array de citas góticas/oscuras
-        const quotes = [
-            {
-                text: "La noche es oscura y alberga horrores, pero la oscuridad también alberga belleza.",
-                author: "Edgar Allan Poe"
-            },
-            {
-                text: "Todos somos un poco raros. Y la vida es un poco extraña. Y cuando encontramos a alguien cuya rareza es compatible con la nuestra, nos unimos a ellos.",
-                author: "Tim Burton"
-            },
-            {
-                text: "Amé a la oscuridad y a la muerte, y por ello estoy aquí, en el valle de la sombra eterna.",
-                author: "H.P. Lovecraft"
-            },
-            {
-                text: "Los cuervos recuerdan las caras de las personas que los trataron mal.",
-                author: "Anónimo"
-            },
-            {
-                text: "La música es como un cuervo para el cementerio de mi mente. Sobrevuela los huecos.",
-                author: "Finch"
-            },
-            {
-                text: "Incluso en la oscuridad más profunda, hay destellos de luz que nos guían.",
-                author: "Anónimo"
-            },
-            {
-                text: "No todos los que vagan están perdidos; no todo lo oscuro carece de belleza.",
-                author: "Inspirado en J.R.R. Tolkien"
-            },
-            {
-                text: "Las almas más hermosas son aquellas que han conocido la derrota, el sufrimiento, la lucha, la pérdida, y han encontrado su camino fuera de las profundidades.",
-                author: "Elisabeth Kübler-Ross"
-            },
-            {
-                text: "Los murciélagos han aprendido que la oscuridad no es algo que temer, sino algo en lo que prosperar.",
-                author: "Anónimo"
-            },
-            {
-                text: "Más oscura es la noche, más brillantes son las estrellas.",
-                author: "Fyodor Dostoevsky"
-            }
-        ];
-
-        // Array de emojis oscuros/góticos
-        const emojis = ["🖤", "🦇", "🕸️", "🔮", "⚰️", "🌙", "🕯️", "🧛‍♀️", "🌑", "🦉"];
-
-        // Función para obtener la hora de Chile
-        function updateDateTime() {
-            const options = {
-                timeZone: 'America/Santiago',
-                weekday: 'long',
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit'
-            };
-            
-            const now = new Date();
-            document.getElementById('datetime').textContent = now.toLocaleDateString('es-CL', options);
-        }
-
-        // Función para seleccionar una cita basada en el día
-        function setDailyQuote() {
-            const today = new Date();
-            const dayOfYear = getDayOfYear(today);
-            const quoteIndex = dayOfYear % quotes.length;
-            const quote = quotes[quoteIndex];
-            
-            document.getElementById('daily-quote').innerHTML = `
-                "${quote.text}"
-                <div class="quote-author">- ${quote.author}</div>
-            `;
-        }
-
-        // Función para seleccionar un emoji basado en el día
-        function setDailyEmoji() {
-            const today = new Date();
-            const dayOfYear = getDayOfYear(today);
-            const emojiIndex = dayOfYear % emojis.length;
-            document.querySelector('.emoji').textContent = emojis[emojiIndex];
-        }
-
-        // Función para obtener el día del año (1-366)
-        function getDayOfYear(date) {
-            const start = new Date(date.getFullYear(), 0, 0);
-            const diff = date - start;
-            const oneDay = 1000 * 60 * 60 * 24;
-            return Math.floor(diff / oneDay);
-        }
-
-        // Función para cargar una imagen basada en el día
-        // Función para cargar una imagen aleatoria desde la carpeta "imagenes"
-    function loadDailyImage() {
-        const imageElement = document.getElementById('daily-image');
-        // Lista de imágenes disponibles en tu carpeta "imagenes"
-        const imagenes = [
-            "imagenes/imagen1.jpg",
-            "imagenes/imagen2.jpg",
-            "imagenes/imagen3.jpg",
-            "imagenes/imagen4.jpg",
-            "imagenes/imagen5.jpg",
-            "imagenes/imagen6.jpg",
-            "imagenes/imagen7.jpg",
-            "imagenes/imagen8.jpg"
-        ];
-        // Selecciona un índice aleatorio
-        const randomIndex = Math.floor(Math.random() * imagenes.length);
-        // Asigna la imagen seleccionada
-        imageElement.src = imagenes[randomIndex];
-        imageElement.alt = "Imagen aleatoria para alegrarte";
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    document.addEventListener('DOMContentLoaded', function() {
-        updateDateTime();
-        setDailyQuote();
-        setDailyEmoji();
-        loadDailyImage();
-        setInterval(updateDateTime, 1000);
+    body {
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(135deg, #0c0c0c, #1a0a2e);
+      color: #d8c2ff;
+      min-height: 100vh;
+      text-align: center;
+      position: relative;
+      /* permitir scroll vertical */
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 20px 0;
+    }
+
+    /* Murciélagos */
+    .bat {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23602e9e'%3E%3Cpath d='M12 1c-2.2 0-4 1.8-4 4 0 1.5.8 2.8 2 3.4-4 1.4-7 5.3-7 9.6h2c0-3.5 2.2-6.5 5.3-7.8C9.5 12.3 10.7 14 12 14s2.5-1.7 3.7-3.8C18.8 11.5 21 14.5 21 18h2c0-4.3-3-8.2-7-9.6 1.2-.6 2-1.9 2-3.4 0-2.2-1.8-4-4-4zm0 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.5;
+      z-index: 0;
+    }
+
+    /* Cuervos */
+    .raven {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23441e6e'%3E%3Cpath d='M22 10c0-1.1-.9-2-2-2h-2.7c-.2-.9-.8-1.7-1.7-2.2l-5.3-2.5-.8-1.3c-.2-.3-.5-.5-.9-.5H6c-.8 0-1.4.6-1.4 1.4v.3c0 .6.4 1.1.9 1.3l2.1.6c-2.2 1.2-3.6 3.5-3.6 6V13c0 1.7.5 3.2 1.4 4.5L1 19v2h5.5c.9.6 2 1 3.3 1h8.1c2.2 0 4.1-1.8 4.1-4v-2.7c0-1-.2-2-.6-2.9.4-.6.6-1.5.6-2.4zm-16 7.3c-1.9 0-3.5-1.6-3.5-3.5 0-1.9 1.6-3.5 3.5-3.5 1.9 0 3.5 1.6 3.5 3.5 0 1.9-1.6 3.5-3.5 3.5z'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.6;
+      z-index: 0;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 800px;
+      padding: 30px;
+      background-color: rgba(20, 10, 30, 0.8);
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+      border: 1px solid #602e9e;
+      position: relative;
+      z-index: 10;
+      backdrop-filter: blur(5px);
+      margin-bottom: 40px;
+    }
+
+    .date-time {
+      font-size: 1.2rem;
+      color: #a68bd6;
+      margin-bottom: 15px;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 1px;
+    }
+
+    .image-container {
+      margin: 20px 0;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(138, 43, 226, 0.5);
+      border: 1px solid #602e9e;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .quote {
+      font-size: 1.4rem;
+      font-style: italic;
+      color: #d8c2ff;
+      margin: 25px 0;
+      padding: 20px;
+      background-color: rgba(40, 20, 60, 0.6);
+      border-radius: 10px;
+      border-left: 5px solid #9966cc;
+      position: relative;
+    }
+
+    .quote::before,
+    .quote::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236e41a7'%3E%3Cpath d='M21 10.5h-2l1-2.5h-2.5l-1 2.5h-2.5v5h7v-5z'/%3E%3Cpath d='M10 10.5H8l1-2.5H6.5l-1 2.5H3v5h7v-5z'/%3E%3C/svg%3E");
+      background-size: contain;
+      opacity: 0.5;
+    }
+
+    .quote::before {
+      top: 5px;
+      left: 5px;
+      transform: rotate(180deg);
+    }
+
+    .quote::after {
+      bottom: 5px;
+      right: 5px;
+    }
+
+    .quote-author {
+      font-size: 1rem;
+      color: #9966cc;
+      text-align: right;
+      font-family: 'Cinzel', serif;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #b68bff;
+      margin-bottom: 20px;
+      font-family: 'Cinzel', serif;
+      text-shadow: 0 0 10px #9966cc;
+      letter-spacing: 2px;
+    }
+
+    .emoji {
+      font-size: 2rem;
+      margin: 15px 0;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 0.9rem;
+      color: #8a64c9;
+      font-style: italic;
+    }
+
+    /* Media queries para móviles/tablets */
+    @media (max-width: 480px) {
+      .container { padding: 15px; }
+      .date-time { font-size: 1rem; }
+      .quote { font-size: 1.2rem; }
+      .emoji { font-size: 1.5rem; }
+      .bat, .raven { width: 20px; height: 20px; }
+    }
+    @media (min-width: 481px) and (max-width: 768px) {
+      .container { padding: 25px; }
+      .date-time { font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Decorativos -->
+  <div class="bat" style="top: 10%; left: 5%;"></div>
+  <div class="bat" style="top: 15%; right: 8%;"></div>
+  <div class="bat" style="bottom: 20%; left: 10%;"></div>
+  <div class="bat" style="bottom: 30%; right: 15%;"></div>
+  <div class="raven" style="top: 8%; right: 20%;"></div>
+  <div class="raven" style="bottom: 12%; left: 15%;"></div>
+
+  <div class="container">
+    <h1>🦇 Hola Tams c: 🦇</h1>
+    <div class="date-time" id="datetime"></div>
+
+    <div class="image-container">
+      <img id="daily-image" src="/api/placeholder/600/400" alt="Imagen del día">
+    </div>
+
+    <div class="quote" id="daily-quote">
+      "La noche es oscura y alberga horrores, pero la oscuridad también alberga belleza."
+      <div class="quote-author">- Edgar Allan Poe</div>
+    </div>
+
+    <div class="emoji">🖤</div>
+    <div class="footer">Conjurado con magia oscura, solo para ti</div>
+  </div>
+
+  <script>
+    const quotes = [
+      { text: "La noche es oscura y alberga horrores, pero la oscuridad también alberga belleza.", author: "Edgar Allan Poe" },
+      { text: "Todos somos un poco raros. Y la vida es un poco extraña. Y cuando encontramos a alguien cuya rareza es compatible con la nuestra, nos unimos a ellos.", author: "Tim Burton" },
+      { text: "Amé a la oscuridad y a la muerte, y por ello estoy aquí, en el valle de la sombra eterna.", author: "H.P. Lovecraft" },
+      { text: "Los cuervos recuerdan las caras de las personas que los trataron mal.", author: "Anónimo" },
+      { text: "La música es como un cuervo para el cementerio de mi mente. Sobrevuela los huecos.", author: "Finch" },
+      { text: "Incluso en la oscuridad más profunda, hay destellos de luz que nos guían.", author: "Anónimo" },
+      { text: "No todos los que vagan están perdidos; no todo lo oscuro carece de belleza.", author: "Inspirado en J.R.R. Tolkien" },
+      { text: "Las almas más hermosas son aquellas que han conocido la derrota, el sufrimiento, la lucha, la pérdida, y han encontrado su camino fuera de las profundidades.", author: "Elisabeth Kübler-Ross" },
+      { text: "Los murciélagos han aprendido que la oscuridad no es algo que temer, sino algo en lo que prosperar.", author: "Anónimo" },
+      { text: "Más oscura es la noche, más brillantes son las estrellas.", author: "Fyodor Dostoevsky" }
+    ];
+
+    const emojis = ["🖤","🦇","🕸️","🔮","⚰️","🌙","🕯️","🧛‍♀️","🌑","🦉"];
+
+    function updateDateTime() {
+      const opts = {
+        timeZone: 'America/Santiago',
+        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
+        hour: '2-digit', minute: '2-digit', second: '2-digit'
+      };
+      document.getElementById('datetime').textContent =
+        new Date().toLocaleDateString('es-CL', opts);
+    }
+
+    function getDayOfYear(d) {
+      const start = new Date(d.getFullYear(), 0, 0);
+      return Math.floor((d - start) / (1000*60*60*24));
+    }
+
+    function setDailyQuote() {
+      const i = getDayOfYear(new Date()) % quotes.length;
+      document.getElementById('daily-quote').innerHTML = `
+        "${quotes[i].text}"
+        <div class="quote-author">- ${quotes[i].author}</div>
+      `;
+    }
+
+    function setDailyEmoji() {
+      const i = getDayOfYear(new Date()) % emojis.length;
+      document.querySelector('.emoji').textContent = emojis[i];
+    }
+
+    function loadDailyImage() {
+      const imagenes = [
+        "imagenes/imagen1.jpg","imagenes/imagen2.jpg","imagenes/imagen3.jpg",
+        "imagenes/imagen4.jpg","imagenes/imagen5.jpg","imagenes/imagen6.jpg",
+        "imagenes/imagen7.jpg","imagenes/imagen8.jpg"
+      ];
+      const imgEl = document.getElementById('daily-image');
+      const rnd = Math.floor(Math.random() * imagenes.length);
+      imgEl.src = imagenes[rnd];
+      imgEl.alt = "Imagen aleatoria para alegrarte";
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateDateTime();
+      setDailyQuote();
+      setDailyEmoji();
+      loadDailyImage();
+      setInterval(updateDateTime, 1000);
     });
-</script>
+  </script>
 </body>
 </html>
