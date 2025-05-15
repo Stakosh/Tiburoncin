@@ -32,6 +32,13 @@
       <div class="quote-author">- Edgar Allan Poe</div>
     </div>
 
+
+    <div class="counters">
+    <button id="btn-abrazos">Abrazos ❤️ 0</button>
+    <button id="btn-besitos">Besitos 😘 0</button>
+    <button id="btn-nalgadas">Nalgadas 🍑 0</button>
+    </div>
+
     <div class="emoji">🖤</div>
     <div class="footer">Conjurado, solo para ti</div>
   </div>
@@ -192,6 +199,38 @@
       loadDailyImage();
       setInterval(updateDateTime, 1000);
     });
+
+    // Inicializamos contadores
+let countAbrazos = 0;
+let countBesitos = 0;
+let countNalgadas = 0;
+
+// Referencias a botones
+const btnAbrazos   = document.getElementById('btn-abrazos');
+const btnBesitos   = document.getElementById('btn-besitos');
+const btnNalgadas  = document.getElementById('btn-nalgadas');
+
+// Función para actualizar texto de botón
+function actualizarBoton(btn, label, count) {
+  btn.textContent = `${label} ${btn === btnAbrazos ? '❤️' : btn === btnBesitos ? '😘' : '🍑'} ${count}`;
+}
+
+// Listeners
+btnAbrazos.addEventListener('click', () => {
+  countAbrazos++;
+  actualizarBoton(btnAbrazos, 'Abrazos', countAbrazos);
+});
+
+btnBesitos.addEventListener('click', () => {
+  countBesitos++;
+  actualizarBoton(btnBesitos, 'Besitos', countBesitos);
+});
+
+btnNalgadas.addEventListener('click', () => {
+  countNalgadas++;
+  actualizarBoton(btnNalgadas, 'Nalgadas', countNalgadas);
+});
+
   </script>
 </body>
 </html>

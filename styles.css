@@ -200,3 +200,52 @@ body::before {
   z-index: 0;
   pointer-events: none;
 }
+
+/* css de los botones*/
+
+.counters {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin: 20px 0;
+  flex-wrap: wrap;               /* se adapta en móvil */
+  z-index: 2;                    /* por encima de la luna/estrellas */
+}
+
+.counters button {
+  background: rgba(40, 10, 60, 0.8);    /* oscuro semi-transparente */
+  border: 1px solid #602e9e;            /* mismo púrpura que tus bordes */
+  box-shadow: 0 3px 10px rgba(138, 43, 226, 0.3);
+  padding: 10px 16px;
+  border-radius: 10px;
+  color: #d8c2ff;                       /* igual que el texto principal */
+  font-family: 'Cinzel', serif;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform 0.1s, background 0.2s;
+}
+
+.counters button:hover {
+  background: rgba(40, 10, 60, 0.9);
+  transform: translateY(-2px);
+}
+
+/* Animación para los emojis flotantes */
+@keyframes floatUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-40px) scale(1.5);
+  }
+}
+
+.emoji-fly {
+  position: absolute;
+  font-size: 1.2rem;
+  pointer-events: none;
+  animation: floatUp 0.8s ease-out forwards;
+  z-index: 3;
+}
