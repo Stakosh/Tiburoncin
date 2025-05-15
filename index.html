@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hola Tams, Buen día✨</title>
+  <title> wenas✨</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -20,11 +20,11 @@
   <div class="raven" style="bottom: 12%; left: 15%;"></div>
 
   <div class="container">
-    <h1>🦇 Hola Tams c: 🦇</h1>
+    <h1>🦇 Hola Tams  🦇</h1>
     <div class="date-time" id="datetime"></div>
 
     <div class="image-container">
-      <img id="daily-image" src="/api/placeholder/600/400" alt="Imagen del día">
+      <img id="daily-image" src="/api/placeholder/600/400" alt="Imagen del dia">
     </div>
 
     <div class="quote" id="daily-quote">
@@ -33,40 +33,88 @@
     </div>
 
     <div class="emoji">🖤</div>
-    <div class="footer">Conjurado con magia oscura, solo para ti</div>
+    <div class="footer">Conjurado, solo para ti</div>
   </div>
 
   <script>
    const quotes = [
-    // Góticas / Vampiros
-    { text: "La noche es eterna para los que beben la oscuridad como sangre.", author: "Anónimo" },
-    { text: "Un vampiro no puede adorar al sol, pero sí agradecer cada atardecer.", author: "Anónimo" },
-    { text: "La sed no se apaga con agua: se sacia con el latido de la noche.", author: "Vlad Tepes" },
+  // Góticas / Vampiros
+  { text: "La noche es eterna para los que beben la oscuridad como sangre.", author: "Anónimo" },
+  { text: "Un vampiro no puede adorar al sol, pero sí agradecer cada atardecer.", author: "Anónimo" },
+  { text: "La sed no se apaga con agua: se sacia con el latido de la noche.", author: "Vlad Tepes" },
 
-    // Atardeceres
-    { text: "Cada atardecer trae la promesa de un nuevo amanecer.", author: "Ralph Waldo Emerson" },
-    { text: "El cielo se tiñe de fuego y alma al caer el sol.", author: "Anónimo" },
+  // Atardeceres
+  { text: "Cada atardecer trae la promesa de un nuevo amanecer.", author: "Ralph Waldo Emerson" },
+  { text: "El cielo se tiñe de fuego y alma al caer el sol.", author: "Anónimo" },
 
-    // Horizon Zero Dawn (líneas célebres)
-    { text: "Aloy: “No soy una salvadora. Solo hago lo que quiero, cuando quiero.”", author: "Horizon Zero Dawn" },
-    { text: "Aitra: “El mundo no pertenece a las máquinas… no por mucho tiempo.”", author: "Horizon Zero Dawn" },
-    { text: "“Eres la elegida, Aloy. La que puede cambiarlo todo.”", author: "Horizon Zero Dawn" },
+  // Horizon Zero Dawn (líneas célebres)
+  { text: "No soy una salvadora. Solo hago lo que quiero, cuando quiero", author: "Aloy" },
+  // Horizon Zero Dawn (líneas célebres)
+  { text: "La fuerza para estar solo es la fuerza para defender tu causa.", author: "Rost" },
+  { text: "Ser inteligente no servirá de nada si no haces del mundo un lugar mejor. Debes usar tu inteligencia para servir a la vida, no a la muerte", author: "Elisabet Sobeck" },
+  { text: "Hay tanto por descubrir antes de que el mundo termine", author: "Sylens" },
 
-    // Stardew Valley
-    { text: "Hay dos formas de ser feliz en la granja: con el sudor de tu frente o con la semilla del corazón.", author: "Anónimo" },
-    { text: "Cada semilla plantada es un sueño enraizado en la tierra.", author: "Stardew Valley" },
-    { text: "La soledad de la granja es la voz más clara de tu propio corazón.", author: "Anónimo" },
+  // Stardew Valley
+  { text: "Hay dos formas de ser feliz en la granja: con el sudor de tu frente o con la semilla del corazón.", author: "Anónimo" },
+  { text: "Cada semilla plantada es un sueño enraizado en la tierra.", author: "Stardew Valley" },
+  { text: "La soledad de la granja es la voz más clara de tu propio corazón.", author: "Anónimo" },
+  { text: "Es lo mismo con las personas.", author: "Leah" },                                                            // :contentReference[oaicite:0]{index=0}
+  { text: "En realidad, prefiero el aspecto crudo, puro de la madera.", author: "Leah" },                               // :contentReference[oaicite:1]{index=1}
+  { text: "Una vez que pases las capas externas, la verdadera naturaleza se empiece a mostrar...", author: "Leah" },     // :contentReference[oaicite:2]{index=2}
+  { text: "Un verano, hacía tanto calor por la noche que me levanté de la cama y salté al río. ¡Espero que nadie me haya visto!", author: "Leah" },  // :contentReference[oaicite:3]{index=3}
+  { text: "Quiero ganar montones de dinero.", author: "Leah" },                                                         // :contentReference[oaicite:4]{index=4}
+  { text: "Es más 'real' que vivir en la ciudad.", author: "Leah" },                                                     // :contentReference[oaicite:5]{index=5}
+  { text: "Para seguir los pasos de mi abuelo.", author: "Leah" },                                                       // :contentReference[oaicite:6]{index=6}
+  { text: "Quería escapar de mi antigua vida.", author: "Leah" },
 
-    // Tiburones (datos curiosos)
-    { text: "Los tiburones han existido por más de 400 millones de años, mucho antes que los dinosaurios.", author: "Dato Curioso" },
-    { text: "El tiburón toro puede vivir tanto en agua dulce como salada.", author: "Dato Curioso" },
-    { text: "Cada año mueren más tiburones por la pesca que personas por ataques.", author: "Dato Curioso" },
+  // Tiburones (datos curiosos)
+  { text: "Los tiburones han existido por más de 400 millones de años, mucho antes que los dinosaurios.", author: "Dato Curioso" },
+  { text: "El tiburón toro puede vivir tanto en agua dulce como salada.", author: "Dato Curioso" },
+  { text: "Cada año mueren más tiburones por la pesca que personas por ataques.", author: "Dato Curioso" },
 
-    // Dinosaurios (datos curiosos)
-    { text: "El Tyrannosaurus rex vivió hace aproximadamente 68 millones de años.", author: "Dato Curioso" },
-    { text: "El velociraptor era más ligero y plumífero de lo que muestran las películas.", author: "Dato Curioso" },
-    { text: "Los primeros dinosaurios aparecieron hace unos 245 millones de años.", author: "Dato Curioso" }
-  ];
+  // Dinosaurios (datos curiosos)
+  { text: "El Tyrannosaurus rex vivió hace aproximadamente 68 millones de años.", author: "Dato Curioso" },
+  { text: "El velociraptor era más ligero y plumífero de lo que muestran las películas.", author: "Dato Curioso" },
+  { text: "Los primeros dinosaurios aparecieron hace unos 245 millones de años.", author: "Dato Curioso" },
+
+  // Otros Juegos (frases emotivas)
+  { text: "Geralt: “People like violence. What the world needs is more kindness.”", author: "The Witcher 3" },
+  { text: "Joel: “When you're lost in the darkness, look for the light.”", author: "The Last of Us" },
+  { text: "Kratos: “Do not be sorry. Be better.”", author: "God of War" },
+  { text: "Link: “Courage need not be remembered, for it is never forgotten.”", author: "The Legend of Zelda: Breath of the Wild" },
+
+  // Horizon Zero Dawn – GAIA
+  { text: "GAIA: “Life finds a way, even in los ecos de la destrucción.”", author: "GAIA" },
+  { text: "GAIA: “Este mundo es un lienzo, y tú su nueva pincelada.”", author: "GAIA" },
+
+  // Naturaleza (datos curiosos)
+  { text: "Los cuervos pueden recordar rostros humanos y transmitir ese recuerdo a toda su bandada.", author: "Dato Curioso" },
+  { text: "Los elefantes muestran rituales de duelo y reconocen los huesos de sus muertos.", author: "Dato Curioso" },
+  { text: "Los zorros cambian el grosor y color de su pelaje según la estación para camuflarse.", author: "Dato Curioso" },
+  { text: "Las nubes cumulonimbus pueden crecer hasta 20 km de altura y generar tormentas intensas.", author: "Dato Curioso" },
+  { text: "Las nubes lenticulares, con forma de lente, se forman al pasar corrientes de aire sobre montañas.", author: "Dato Curioso" },
+  // Naturaleza (datos curiosos)
+{ text: "Las abejas pueden reconocer rostros humanos y recordarlos durante días.", author: "Dato Curioso" },
+{ text: "La medusa Turritopsis dohrnii es considerada biológicamente inmortal: puede revertir su ciclo de vida.", author: "Dato Curioso" },
+{ text: "Los geckos se adhieren a superficies lisas gracias a millones de fibras microscópicas en sus patas.", author: "Dato Curioso" },
+{ text: "Los árboles de secuoya gigante pueden superar los 3 000 años de edad y alcanzar más de 100 m de altura.", author: "Dato Curioso" },
+{ text: "La bioluminiscencia del plancton convierte las olas en un mar de luz cuando se agitan.", author: "Dato Curioso" },
+{ text: "Los camaleones mueven cada ojo de forma independiente, logrando visión de casi 360°.", author: "Dato Curioso" },
+{ text: "El pingüino emperador puede bucear más de 500 m y aguantar más de 20 minutos bajo el agua.", author: "Dato Curioso" },
+{ text: "Los murciélagos son los únicos mamíferos capaces de vuelo sostenido y emiten ultrasonidos para orientarse.", author: "Dato Curioso" },
+{ text: "El colibrí es el único pájaro capaz de volar hacia atrás y batir sus alas hasta 80 veces por segundo.", author: "Dato Curioso" },
+{ text: "Las orcas tienen culturas distintas según la región y transmiten técnicas de caza a su descendencia.", author: "Dato Curioso" },
+// The Sims (Simlish)
+{ text: "¡Sul sul!",   author: "Sim" },
+{ text: "¡Dag dag!",   author: "Sim" },
+{ text: "¡Nooboo!",    author: "Sim" },
+{ text: "¡Oh feebee lay!", author: "Sim" },
+{ text: "¡WooHoo!",    author: "Sim" },
+{ text: "¡Ooboo chooby!", author: "Sim" },
+{ text: "¡Shimsham!",  author: "Sim" },
+{ text: "¡Shoo flee!", author: "Sim" }
+
+];
     const emojis = [
     "🖤","🦇","🕸️","🔮","⚰️","🌙","🕯️","🧛‍♀️","🌑","🦉", // gótico
     "🌅","🌄","🌇","☀️","🌠",                               // atardecer/amanecer
@@ -78,8 +126,8 @@
     function updateDateTime() {
       const opts = {
         timeZone: 'America/Santiago',
-        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
-        hour: '2-digit', minute: '2-digit', second: '2-digit'
+        weekday: 'long', month: 'long', day: 'numeric',
+        hour: '2-digit', minute: '2-digit'
       };
       document.getElementById('datetime').textContent =
         new Date().toLocaleDateString('es-CL', opts);
@@ -103,9 +151,34 @@
     }
     function loadDailyImage() {
       const imagenes = [
-        "imagenes/imagen1.jpg","imagenes/imagen2.jpg","imagenes/imagen3.jpg",
-        "imagenes/imagen4.jpg","imagenes/imagen5.jpg","imagenes/imagen6.jpg",
-        "imagenes/imagen7.jpg","imagenes/imagen8.jpg"
+        "imagenes/imagen1.jpg",
+        "imagenes/imagen2.jpg",
+        "imagenes/imagen3.jpg",
+        "imagenes/imagen4.jpg",
+        "imagenes/imagen5.jpg",
+        "imagenes/imagen6.jpg",
+        "imagenes/imagen7.jpg",
+        "imagenes/imagen8.jpg",
+        "imagenes/imagen9.jpg",
+        "imagenes/imagen10.jpg",
+        "imagenes/imagen11.jpg",
+        "imagenes/imagen12.jpg",
+        "imagenes/imagen13.jpg",
+        "imagenes/imagen14.jpg",
+        "imagenes/imagen15.jpg",
+        "imagenes/imagen16.jpg",
+        "imagenes/imagen17.jpg",
+        "imagenes/imagen18.jpg",
+        "imagenes/imagen19.jpg",
+        "imagenes/imagen20.jpg",
+        "imagenes/imagen21.jpg",
+        "imagenes/imagen22.jpg",
+        "imagenes/imagen23.jpg",
+        "imagenes/imagen24.jpg",
+        "imagenes/imagen25.jpg",
+        "imagenes/imagen26.jpg",
+        "imagenes/imagen27.jpg"
+
       ];
       const imgEl = document.getElementById('daily-image');
       imgEl.src = imagenes[Math.floor(Math.random()*imagenes.length)];

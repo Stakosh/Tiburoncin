@@ -86,18 +86,22 @@ body {
 }
 
 .image-container {
-  margin: 20px 0;
+  /* que nunca ocupe más del 90% del ancho disponible
+     pero tampoco más de 500px */
+  width: min(90%, 500px);
+  margin: 20px auto;          /* centrado horizontal */
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(138, 43, 226, 0.5);
   border: 1px solid #602e9e;
 }
 
-img {
+.image-container img {
   width: 100%;
   height: auto;
   display: block;
 }
+
 
 .quote {
   font-size: 1.4rem;
