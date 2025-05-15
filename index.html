@@ -200,35 +200,54 @@
       setInterval(updateDateTime, 1000);
     });
 
-    // Inicializamos contadores
+    // Genera varios emojis flotando desde la posición del botón
+function spawnEmojis(buttonEl, emojiChar, count = 8) {
+  const rect = buttonEl.getBoundingClientRect();
+  for (let i = 0; i < count; i++) {
+    const span = document.createElement('span');
+    span.textContent = emojiChar;
+    span.className = 'emoji-fly';
+    // posición inicial cerca del centro del botón, con dispersión aleatoria
+    span.style.left = `${rect.left + rect.width/2 + (Math.random() * 40 - 20)}px`;
+    span.style.top  = `${rect.top  + rect.height/2 + (Math.random() * 40 - 20)}px`;
+    document.body.appendChild(span);
+    // elimina el span cuando termine la animación
+    span.addEventListener('animationend', () => span.remove());
+  }
+}
+
+// Inicializamos contadores
 let countAbrazos = 0;
 let countBesitos = 0;
 let countNalgadas = 0;
 
 // Referencias a botones
-const btnAbrazos   = document.getElementById('btn-abrazos');
-const btnBesitos   = document.getElementById('btn-besitos');
-const btnNalgadas  = document.getElementById('btn-nalgadas');
+const btnAbrazos  = document.getElementById('btn-abrazos');
+const btnBesitos  = document.getElementById('btn-besitos');
+const btnNalgadas = document.getElementById('btn-nalgadas');
 
-// Función para actualizar texto de botón
-function actualizarBoton(btn, label, count) {
-  btn.textContent = `${label} ${btn === btnAbrazos ? '❤️' : btn === btnBesitos ? '😘' : '🍑'} ${count}`;
+// Función para actualizar texto de botón (ahora recibe también el emoji)
+function actualizarBoton(btn, label, count, emojiChar) {
+  btn.textContent = `${label} ${emojiChar} ${count}`;
 }
 
-// Listeners
+// Listeners con spawn de emojis
 btnAbrazos.addEventListener('click', () => {
   countAbrazos++;
-  actualizarBoton(btnAbrazos, 'Abrazos', countAbrazos);
+  actualizarBoton(btnAbrazos, 'Abrazos', countAbrazos, '❤️');
+  spawnEmojis(btnAbrazos, '❤️');
 });
 
 btnBesitos.addEventListener('click', () => {
   countBesitos++;
-  actualizarBoton(btnBesitos, 'Besitos', countBesitos);
+  actualizarBoton(btnBesitos, 'Besitos', countBesitos, '😘');
+  spawnEmojis(btnBesitos, '😘');
 });
 
 btnNalgadas.addEventListener('click', () => {
   countNalgadas++;
-  actualizarBoton(btnNalgadas, 'Nalgadas', countNalgadas);
+  actualizarBoton(btnNalgadas, 'Nalgadas', countNalgadas, '🍑');
+  spawnEmojis(btnNalgadas, '🍑');
 });
 
   </script>
