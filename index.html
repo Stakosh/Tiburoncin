@@ -203,19 +203,28 @@
     // Genera varios emojis flotando desde la posición del botón
 function spawnEmojis(buttonEl, emojiChar, count = 8) {
   const rect = buttonEl.getBoundingClientRect();
+  // Calculamos el desplazamiento del documento
+  const scrollX = window.pageXOffset || document.documentElement.scrollLeft;
+  const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+
   for (let i = 0; i < count; i++) {
     const span = document.createElement('span');
     span.textContent = emojiChar;
     span.className = 'emoji-fly';
-    // posición inicial cerca del centro del botón, con dispersión aleatoria
-    span.style.left = `${rect.left + rect.width/2 + (Math.random() * 40 - 20)}px`;
-    span.style.top  = `${rect.top  + rect.height/2 + (Math.random() * 40 - 20)}px`;
+
+    // Posición central del botón + dispersión aleatoria + scroll
+    const x = rect.left + rect.width / 2 + (Math.random() * 40 - 20) + scrollX;
+    const y = rect.top  + rect.height / 2 + (Math.random() * 40 - 20) + scrollY;
+
+    span.style.left = `${x}px`;
+    span.style.top  = `${y}px`;
+
     document.body.appendChild(span);
-    // elimina el span cuando termine la animación
+
+    // Se elimina al terminar la animación
     span.addEventListener('animationend', () => span.remove());
   }
 }
-
 // Inicializamos contadores
 let countAbrazos = 0;
 let countBesitos = 0;

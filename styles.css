@@ -232,14 +232,8 @@ body::before {
 
 /* Animación para los emojis flotantes */
 @keyframes floatUp {
-  0% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-40px) scale(1.5);
-  }
+  0% { opacity:1; transform:translateY(0) scale(1); }
+ 100% { opacity:0; transform:translateY(-40px) scale(1.5); }
 }
 
 .emoji-fly {
@@ -249,3 +243,4 @@ body::before {
   animation: floatUp 0.8s ease-out forwards;
   z-index: 3;
 }
+
