@@ -168,3 +168,35 @@ h1 {
   .container { padding: 25px; }
   .date-time { font-size: 1.1rem; }
 }
+
+/* ----- LUNA SUTIL ----- */
+body::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: 15%;
+  width: 150px; 
+  height: 150px;
+  background: radial-gradient(circle at 40% 40%, rgba(255, 255, 224, 0.6), transparent 70%);
+  border-radius: 50%;
+  filter: blur(4px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ----- CAPA EXTRA DE ESTRELLITAS PEQUEÑAS ----- */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background:
+    radial-gradient(rgba(255,255,255,0.4) 1px, transparent 0) 10% 20%/3px 3px,
+    radial-gradient(rgba(255,255,255,0.4) 1px, transparent 0) 30% 80%/2px 2px,
+    radial-gradient(rgba(255,255,255,0.4) 1px, transparent 0) 50% 40%/4px 4px,
+    radial-gradient(rgba(255,255,255,0.4) 1px, transparent 0) 70% 60%/3px 3px,
+    radial-gradient(rgba(255,255,255,0.4) 1px, transparent 0) 90% 30%/2px 2px;
+  opacity: 0.2;
+  z-index: 0;
+  pointer-events: none;
+}
